@@ -1,0 +1,150 @@
+.mt-5 {
+    margin-top: 5px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.imran-main-dashboard {
+    padding: 5px 0;
+    background: #F0F5F9;
+    height: 100vh;
+}
+
+.imran-custom-btn {
+    text-decoration: none !IMPORTANT;
+    padding: 7px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    background: #E3EBF1;
+    color: #495057;
+    border: 1px solid #A9BDCC;
+    transition: all .15s ease-in-out;
+    font-size: 12px;
+}
+
+.imran-custom-btn:hover {
+    background: #EAF0F5;
+}
+
+.lag-btn select {
+    width: 170px;
+}
+
+.imran-employee-select {
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+}
+
+.ies-header {
+    padding: 8px;
+}
+
+.ies-header select {
+    width: 43%;
+}
+
+.ies-header .fa {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.ies-body {
+    background: #fff;
+    padding: 8px;
+}
+
+.ies-body table {
+    padding: 0;
+}
+
+.ies-body table tr td {
+    font-size: 13px;
+    padding: 5px;
+}
+
+.ies-body table tr th {
+    font-size: 13px;
+    padding: 5px;
+}
+
+
+.ies-footer {
+    padding: 10px;
+
+}
+
+.ies-footer .table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+    border: none;
+}
+
+.dash-btn .imran-custom-btn {
+    display: block;
+    text-align: center;
+}
+
+.main-dash-btn {
+    background-color: rgba(255, 193, 7, 0.507) !important;
+    border: 1px solid #ffc107;
+    transition: .4s;
+}
+
+.main-dash-btn:hover {
+    background: #FCCB36 !important;
+}
+
+
+.imran-employee-tab {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.ies-header input {
+    width: 46%;
+    padding: 7px;
+}
+
+.ies-right-body {
+    padding: 8px;
+}
+
+.ies-tab-btn .imran-custom-btn {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.ies-tab-item {
+    background-color: #E3EBF1;
+    border-radius: 3px;
+    border: 1px solid #A9BDCC;
+    margin-bottom: 6px;
+    box-shadow: 0 0 3px #E3EBF1;
+    cursor: pointer;
+    overflow: hidden
+}
+.ies-tab-item img{
+    width: 100%;
+}
+.ies-tab-item h5 {
+    font-weight: 500 !IMPORTANT;
+    font-size: 14px;
+    padding: 3px 6px;
+    text-align: center;
+}
+.ies-tab-item p{
+    display: block;
+    text-align: center;
+}
+.ies-tab-content .col-sm-4{
+    padding: 0 5px;
+}
+

@@ -1,0 +1,17 @@
+.boxitem{
+    
+}
+.singlebox{}
+.itembox{
+    
+}
+.itembox h1{
+    padding: 20px 20px 0 20px;
+    font-weight: bold !important;
+}
+.itembox p{
+    padding: 0px 20px 0 20px;
+}
+.itembox h1>span{
+    font-size: 50px;
+}
