@@ -47,7 +47,7 @@
                                  
                                  <div class="col-xs-12 col-sm-4 col-md-3">
                                      <label for="supplier">Suppliers</label>
-                                     <select name="supplier_id" class="form-control">
+                                     <select name="supplier_id select2" id="" class="form-control">
                                             <option value="">Select Supplier</option>
                                         @foreach($supplieres as $supplier)
                                             <option  @if(isset($supplier_id)) {{ $supplier_id == $supplier->id ? 'selected' : '' }}  @endif value="{{ $supplier->id }}">{{ $supplier->id }} - {{ $supplier->name }}</option>

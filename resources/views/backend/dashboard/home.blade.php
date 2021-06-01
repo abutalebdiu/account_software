@@ -68,6 +68,19 @@
 
                              </div>
                          </div>
+                     </div> 
+
+                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                         <div class="boxitem bg-white" style="margin-bottom:20px">
+                             <div class="singlebox ">
+                                 <div class="itembox">
+                                     <h1> {{ $customer1 }} <span class="pull-right"><i class="fa fa-users"></i></span></h1>
+                                     <p>Total Walk Customers</p>
+                                     <a href="{{ route('customer.walk.index') }}" class="btn btn-default" style="width:100%">More Detials <i class="fa fa-arrow-circle-right"></i></a>
+                                 </div>
+
+                             </div>
+                         </div>
                      </div>
 
                  </div>

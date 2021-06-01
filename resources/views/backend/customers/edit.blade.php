@@ -102,6 +102,20 @@
                                          <div style='color:red; padding: 0 5px;'>{{($errors->has('notes'))?($errors->first('notes')):''}}</div>
                                      </div>
                                  </div>
+                                  <div class="col-sm-6">
+                                     <div class="form-group">
+                                         <label for="">Customer Type</label>
+                                         
+                                         <select name="customer_type" class="form-control">
+                                          <option value="">Select Type</option>
+                                          <option {{ $customer->customer_type ==1 ? "selected" :'' }} value="1"> Walk Customer </option>
+                                          <option {{ $customer->customer_type ==2 ? "selected" :'' }} value="2"> Regular Customer </option>
+
+                                      </select>                
+                                    <div style='color:red; padding: 0 5px;'>{{($errors->has('notes'))?($errors->first('notes')):''}}</div>
+                                     </div>
+                                 </div>
+
                                  <div class="col-sm-6">
                                      <div class="form-group">
                                          <input class="btn btn-primary" type="submit" value="Submit">

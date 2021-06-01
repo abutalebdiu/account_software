@@ -33,7 +33,7 @@ class CreateCustomersTable extends Migration
             $table->string('company_name',100)->nullable();
             $table->text('address')->nullable();
 
-
+            $table->integer('customer_type')->default(2); /*2 for regular customer 1 for walk customer*/            
             $table->string('verified',25)->nullable();
             $table->string('deleted_at',25)->nullable();
             $table->integer('created_by')->nullable();

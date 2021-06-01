@@ -21,7 +21,17 @@ class CustomerController extends Controller
     {
         $data['customers'] = Customer::where('customer_type',2)->get();
         return view('backend.customers.view',$data);
+    }  
+
+
+    public function walkindex()
+    {
+        $data['customers'] = Customer::where('customer_type',1)->get();
+        return view('backend.customers.walkview',$data);
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.

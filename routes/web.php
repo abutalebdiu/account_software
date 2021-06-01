@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () {  
     return view('auth.login');
 });
 
@@ -340,7 +340,11 @@ Route::group(['middleware' => ['web','auth']], function()
 
     // Customer
         Route::group(['prefix'=>'customer'], function(){
+
             Route::get('index','CustomerController@index')->name('customer.index');
+            Route::get('walk/customer','CustomerController@walkindex')->name('customer.walk.index');
+
+
             Route::get('create','CustomerController@create')->name('customer.create');
             Route::post('store','CustomerController@store')->name('customer.store');
             Route::get('edit/{id}','CustomerController@edit')->name('customer.edit');

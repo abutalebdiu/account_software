@@ -28,7 +28,7 @@
                  <i class="fa fa-home"></i>
                  <a href="#">Home</a>
              </li>
-             <li class="active">Regular Customers</li>
+             <li class="active">customers</li>
          </ul>
      </div>
      <!-- /Page Breadcrumb -->
@@ -39,7 +39,7 @@
              <div class="col-xs-12 col-md-12">
                  <div class="widget">
                      <div class="widget-header bg-info">
-                         <span class="widget-caption" style="font-size: 20px">Regular Customers </span>
+                         <span class="widget-caption" style="font-size: 20px">Customers </span>
                      </div>
 
                     <div class="widget-body" style="background-color: #fff;">
@@ -207,109 +207,8 @@
         });
 
 
-      {{--    $(document).on('click', '#multiple-qr, #multiple-challan', function ()
-        {
-            var ids = [];
-            $('input.check_single_class[type=checkbox]').each(function () {
-                if(this.checked){
-                    var v = $(this).val();
-                    ids.push(v);
-                }
-            });
-
-            var url = $(this).attr("id") == "multiple-qr" ? "route" : "route";
-
-            $.ajax({
-                url: url,
-                data: {ids: ids, "_token": "{{ csrf_token() }}",},
-                type: "POST",
-                success: function(response){
-                    // console.log(response);
-                    $.print(response);
-                },
-            });
-        });  --}}
-
-
-        //28.03.2021
-        {{--  $(document).on('click','.bulk_assigning_partner',function(){
-            $('#bulk_assign_order_modal').modal('show');
-            var getRoute  = $('.bulk_assign_route').val();
-            $('#bulk_assign_order_action').attr('action',getRoute);
-        });
-        $(document).on('change','.bulk_partner_id_class',function(){
-            $('.submitButton').attr('disabled','disabled');
-            var partnerId = $(this).val();
-            if(partnerId)
-            {
-                $('.submitButton').removeAttr('disabled','disabled');
-            }else{
-                $('.submitButton').attr('disabled','disabled');
-            }
-        })
-
-        $(document).on("submit",'#bulk_assign_order_action',function(e){
-		e.preventDefault();
-            var form = $(this);
-            var url = form.attr("action");
-            var type = form.attr("method");
-
-            var ids = [];
-                $('input.check_single_class[type=checkbox]').each(function () {
-                    if(this.checked){
-                        var v = $(this).val();
-                        ids.push(v);
-                    }
-                });
-            $('.bulk_order_id').val(ids);
-            var data = form.serialize();
-                //ajax start	
-                    $.ajax({
-                    url: url,
-                    data: data,
-                    type: type,
-                    datatype:"JSON",
-                    beforeSend:function(){
-                        $('.loading').fadeIn();
-                    },
-                    success: function(data){
-                            if(data.delivery_status == 'success')
-                            {
-                                $('#bulk_assign_order_modal').modal("hide");
-                                $('.check_all_class').prop('checked', false).change();
-                                $('.check_single_class').prop('checked', false).change();
-                                //swal("Great","Successfully Add Information","success");
-                                form[0].reset();
-                                    $('#msg').css({
-                                        'color':'green',
-                                        'height':'30px',
-                                        'width':'100%'
-                                    });
-                                    $('#msg').html("data inserted successfully").fadeIn('slow') //also show a success message 
-                                    $('#msg').delay(5000).fadeOut('slow');
-
-                                location.reload();
-                            }else{
-                                 $('#msg').css({
-                                        'color':'red',
-                                        'height':'30px',
-                                        'width':'100%'
-                                });
-                                $('#msg').html("data not inserted ").fadeIn('slow') //also show a success message 
-                                $('#msg').delay(5000).fadeOut('slow');
-                            }
-                        },
-                    complete:function(){
-                        $('.loading').fadeOut();
-                    },
-                });
-                //end ajax
-            });
-            // end submit optional details works
-        //28.03.2021  --}}
-
-
-
+     
+ 
 
      </script>
  @endpush

@@ -28,8 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $data['customer1'] = Customer::where('customer_type',1)->count();
         $data['allusers']   = User::count();
-        $data['customers']  = Customer::count();
+        $data['customers']  = Customer::where('customer_type',2)->count();
         $data['suppliers']  = Supplier::count();
         $data['totalproducts']= Product::count();
 
@@ -41,6 +42,8 @@ class HomeController extends Controller
                                 ->where('main_stocks.available_stock','<',0)
                                 ->groupBy('products.supplier_id')
                                 ->get();
+
+     
                                             
         return view('backend.dashboard.home',$data);
     }

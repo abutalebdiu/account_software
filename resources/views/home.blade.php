@@ -26,6 +26,7 @@
     <link href="{{ asset('public/frontend') }}/css/demo.min.css" rel="stylesheet" />
     <link href="{{ asset('public/frontend') }}/css/typicons.min.css" rel="stylesheet" />
     <link href="{{ asset('public/frontend') }}/css/animate.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="{{ asset('public/frontend') }}/css/custom.css">
 
@@ -316,6 +317,12 @@
                             <li>
                                 <a href="{{ route('customer.index') }}">
                                     <span class="menu-text">Customer List</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('customer.walk.index') }}">
+                                    <span class="menu-text">Walk Customer List</span>
                                 </a>
                             </li>
                             <li>
@@ -796,6 +803,8 @@
     <script src="{{ asset('public/frontend') }}/table/datatables-responsive/js/dataTables.responsive.min.js"></script>
     <script src="{{ asset('public/frontend') }}/table/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <script>
         $(function() {
             $('#example1').DataTable({
@@ -867,6 +876,10 @@
             });
         });
 
+
+         $(document).ready(function() {
+            $('.select2').select2();
+        });
     </script>
 
 
