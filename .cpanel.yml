@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/softtech/public_html/account
+    - /bin/cp * $DEPLOYPATH
