@@ -91,7 +91,7 @@
                                                     </li>
                                                      
                                                     <li>
-                                                        <a href=""> <i class="fa fa-money tiny-icon"></i>
+                                                        <a href="{{ route('customer.payment.history',$customer->id) }}"> <i class="fa fa-money tiny-icon"></i>
                                                             <span class="menu-text">Payment Histroy</span>
                                                         </a>
                                                     </li>

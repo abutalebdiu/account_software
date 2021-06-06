@@ -81,4 +81,24 @@ class ReportController extends Controller
 
 
 
+	public function purchase_sales_report()
+	{
+
+
+		return view('backend.reports.purchase_sales_report');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

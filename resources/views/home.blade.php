@@ -329,6 +329,11 @@
                                 <a href="{{ route('customer.create') }}">
                                     <span class="menu-text">Add New Customer</span>
                                 </a>
+                            </li>  
+                            <li>
+                                <a href="{{ route('customer.loan.index') }}">
+                                    <span class="menu-text">Customer Loan</span>
+                                </a>
                             </li>
                             
                           

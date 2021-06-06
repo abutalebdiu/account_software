@@ -7,7 +7,7 @@ use App\Models\Customer;
 use Auth;
 use Validator;
 use PDF;
-
+use App\Model\Backend\Payment\AccountPaymentHistory;
 use App\Model\Backend\Customer\Customer as BackendCustomer;
 
 class CustomerController extends Controller
@@ -29,6 +29,22 @@ class CustomerController extends Controller
         $data['customers'] = Customer::where('customer_type',1)->get();
         return view('backend.customers.walkview',$data);
     }
+
+
+
+
+
+     public function paymenthistory($id)
+    {
+        $data['customer']              = Customer::where('id',$id)->first();
+
+
+        $data['paymenthistories']  = AccountPaymentHistory::whereIn('module_id',[2,4,5])->latest()->get();
+
+        return view('backend.customers.paymenthistory',$data);
+    }
+
+
 
 
 
@@ -335,6 +351,50 @@ class CustomerController extends Controller
             ]);
         }
     }
+
+
+
+
+
+
+
+
+
+     /**Customer Payment History Reports */
+    public function paymenthistoryexport(Request $request,$id)
+    {
+        $input = $request->all();
+        $allaccounthistory = [];
+        if($request->accountid == null)
+        {
+            $data['customer']         = Customer::where('id',$id)->first();
+            $data['paymenthistories'] = AccountPaymentHistory::whereIn('module_id',[2,4,5])->latest()->get();
+        }
+        else{
+            if($input['accountid'] != ''){
+                foreach ($input['accountid'] as $key => $value) {
+                    array_push($allaccounthistory,$input['accountid'][$key]);
+                }
+            }
+
+            $data['customer']         = Customer::where('id',$id)->first();
+            $data['paymenthistories'] = AccountPaymentHistory::whereIn('id',$allaccounthistory)->whereIn('module_id',[2,4,5])->latest()->get();
+            
+        }
+
+
+        $pdf = PDF::loadView('backend.customers.customer_payment_history_export',$data);
+        return $pdf->download('CustomerPaymentHistory.pdf');
+    }
+
+
+
+
+
+
+
+
+
 
 
 }

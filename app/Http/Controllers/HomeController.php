@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['customer1'] = Customer::where('customer_type',1)->count();
+        $data['customer1']  = Customer::where('customer_type',1)->count();
         $data['allusers']   = User::count();
         $data['customers']  = Customer::where('customer_type',2)->count();
         $data['suppliers']  = Supplier::count();

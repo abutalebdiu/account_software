@@ -10,6 +10,8 @@ use App\Model\Backend\Customer\Customer;
 use App\Model\Backend\Supplier;
 use App\Model\Backend\Payment\PaymentMethod;
 use App\Model\Backend\Payment\AccountPaymentHistory;
+
+
 class PaymentAllBillController extends Controller
 {
     use AddPaymentTrait;
@@ -178,8 +180,9 @@ class PaymentAllBillController extends Controller
         }
 
         /**Receive Previous Bill  From Customer */
-        public function receivePreviousBill()
-        {
+        public function receivePreviousBill(Request $request)
+        { 
+            $data['customer_id'] = $request->customer_id;
             $data['payment_methods']   = PaymentMethod::whereNull('deleted_at')->get();
             $data['customers']          = Customer::latest()->get();
             return view('backend.payment.receive_previous_bill.customer_bill',$data);

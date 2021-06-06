@@ -171,6 +171,7 @@
                 'sale' => 2,
                 'purchase previous bill' => 3,
                 'sale previous bill' => 4,
+                'loan' => 5,
             ];
         }
         function cdf_HH()

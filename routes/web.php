@@ -75,6 +75,19 @@ Route::group(['middleware' => ['web','auth']], function()
         });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         // Damage
          Route::group(['prefix'=>'damage'], function(){
             Route::get('index','DamageController@index')->name('damage.index');
@@ -100,8 +113,6 @@ Route::group(['middleware' => ['web','auth']], function()
             Route::get('daily/summery','ReportController@dailysummery')->name('report.daily.summery');
 
         });
-
-
 
 
 
@@ -361,12 +372,53 @@ Route::group(['middleware' => ['web','auth']], function()
             /**create customer by ajax */
             Route::post('create/by/ajax','CustomerController@createCustomerByAjax')->name('createCustomerByAjax');
             /**create customer by ajax */
+
+                 
+             Route::get('payment/history/{id}','CustomerController@paymenthistory')->name('customer.payment.history'); 
+
+
+             Route::post('payment/history/export/{id}','CustomerController@paymenthistoryexport')->name('customer.payment.history.export');
+
+
+
+
+
         });
 
         /*  =====================        account  ==========================================*/
         Route::group(['as'=>'admin.','prefix'=>'order/by','namespace'=>'Backend'], function(){
             Route::resource('reference', 'ReferenceController');
         });
+
+
+
+
+        Route::group(['as'=>'customer.loan.','prefix'=>'customer/loan'],function(){
+
+            Route::get('/view','LoanController@index')->name('index');
+            Route::get('/create','LoanController@create')->name('create');
+            Route::post('/store','LoanController@store')->name('store');
+            Route::get('/edit/{id}','LoanController@edit')->name('edit');
+            Route::post('/update/{id}','LoanController@update')->name('update');
+            Route::get('/destroy/{id}','LoanController@destroy')->name('destroy');
+
+
+            Route::get('receive','LoanController@loanrecived')->name('receive');
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -671,10 +723,7 @@ Route::group(['middleware' => ['web','auth']], function()
         });
 
 
-       /**
-     * Developer: Bappi Saha
-     * Transaction  Start
-     */
+     
 
     Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Backend\Transaction'], function () {
         Route::resource('transaction-type', 'TransactionTypeController');
@@ -690,10 +739,7 @@ Route::group(['middleware' => ['web','auth']], function()
     });
 
 
-    /**
-     * Developer: Bappi Saha
-     * Transaction  End
-     */
+   
 
 
 });
