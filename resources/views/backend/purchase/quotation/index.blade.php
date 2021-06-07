@@ -81,6 +81,27 @@
 
                         <div class="row" style="margin: 30px 0;">
                             <div class="col-md-6">
+                                <form action="" method="get">
+                                     <div class="row">
+                                          <div class="col-xs-12 col-sm-8 col-md-8">
+                                             <label for="supplier">Suppliers</label>
+                                             <select name="supplier_id select2" id="" class="form-control">
+                                                    <option value="">Select Supplier</option>
+                                                @foreach($supplieres as $supplier)
+                                                    <option  @if(isset($supplier_id)) {{ $supplier_id == $supplier->id ? 'selected' : '' }}  @endif value="{{ $supplier->id }}">{{ $supplier->id }} - {{ $supplier->name }}</option>
+                                                @endforeach
+                                             </select>
+                                         </div>
+         
+                                         <div class="col-xs-12 col-sm-4 col-md-4">
+                                             
+                                             <br>
+                                            <button type="submit" class="btn btn-primary"> <i class="fa fa-search"> </i> Search</button>
+                                         </div>
+
+
+                                     </div>
+                                </form>
                             </div>
                             <div class="col-md-6 text-right">
                                 <a href="{{route('admin.purchase.create')}}" class="btn btn-info"><i class="fa fa-plus"></i>
@@ -92,6 +113,12 @@
                             </div>
                         </div>
                         <div class="table-responsive">
+
+                     
+
+
+
+
                             <table id="example1" class="table table-bordered table-striped table-hover">
                                 <thead>
                                     <tr>

@@ -41,12 +41,23 @@ class QuotationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['purchases'] = PurchaseFinal::whereNull('deleted_at')
+
+        $data['supplieres'] = Supplier::get();
+
+        $query = PurchaseFinal::query();
+
+        if($request->supplier_id)
+        {
+            $query = $query->where('supplier_id',$request->supplier_id);
+        }
+
+        $data['purchases'] = $query->whereNull('deleted_at')
                         ->latest()
                         ->where('purchase_status_id',3)
                         ->get();
+
         return view('backend.purchase.quotation.index',$data);
     }
 
@@ -55,8 +66,11 @@ class QuotationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+
+        $data['supplier_id']    = $request->supplier_id;
+
         $data['brands']         = Brand::all();
         $data['categories']     = Category::all();
         $data['units']          = Unit::all();

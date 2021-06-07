@@ -457,7 +457,7 @@
                     
                     
                     <li>
-                        <a href="#"> 11
+                        <a href="{{ route('dashboard') }}"> 11
                             <i class="menu-icon fa fa-dashboard"></i>
                             <span class="menu-text"> Dashboard </span>
                         </a>
@@ -718,18 +718,7 @@
                     </li>
                     <!--Settings  End-->
 
-
-                   
-                    
-                
-                     
-
-                  
-
-              
-
-  
-
+ 
 
                 </ul>
                 <!-- /Sidebar Menu -->

@@ -47,4 +47,33 @@ class HomeController extends Controller
                                             
         return view('backend.dashboard.home',$data);
     }
+
+
+
+    public function dashboard()
+    {
+        $data['customer1']  = Customer::where('customer_type',1)->count();
+        $data['allusers']   = User::count();
+        $data['customers']  = Customer::where('customer_type',2)->count();
+        $data['suppliers']  = Supplier::count();
+        $data['totalproducts']= Product::count();
+
+        $data['supplierLowQtys']= MainStock::join('products','products.id','=','main_stocks.product_id')
+                                ->select('products.supplier_id',
+                                    'main_stocks.available_stock as available_stock',
+                                    DB::raw('COUNT(main_stocks.id) as total')
+                                )
+                                ->where('main_stocks.available_stock','<',0)
+                                ->groupBy('products.supplier_id')
+                                ->get();
+
+     
+                                            
+        return view('backend.dashboard.dashboard',$data);
+    }
 }
+
+
+
+
+

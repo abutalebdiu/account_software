@@ -35,6 +35,7 @@ Route::group(['middleware' => ['web','auth']], function()
 {
 
 	Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
 
 	    Route::group(['prefix'=>'user'], function(){

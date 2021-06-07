@@ -5,6 +5,7 @@ use App\Models\Reference;
 use Illuminate\Http\Request;
 use DB;
 use Validator;
+use App\Model\Backend\Sale\SaleFinal;
 
 class ReferenceController extends Controller
 {
@@ -82,9 +83,11 @@ class ReferenceController extends Controller
      * @param  \App\Models\Attendance  $attendance
      * @return \Illuminate\Http\Response
      */
-    public function show(Reference $reference)
+    public function show(Reference $reference,$id)
     {
-        //
+        $data['salesfinals'] = SaleFinal::where('reference_id',$id)->get();
+        $data['reference'] = Reference::find($id);
+        return view('backend.references.show',$data);
     }
 
     /**
